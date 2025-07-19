@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=title %>
+    </title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+    <div class="msgcont">
+        <div class="cont">
+            <a href="/<%=userid%>/new" class="anchornewmsg">
+                NEW MESSAGE
+            </a>
+            <% for(let i=0; i<messages.length ; i++){ %>
+                <div class="usermsgcont">
+                    <div>
+                        <%=messages[i].message %>
+                    </div>
+                    <div>
+                        <a href="/messages/<%=messages[i].id %>/?userid=<%=userid%>">
+                            <button>OPEN</button>
+                        </a>
+                    </div>
+                </div>
+                <% } %>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

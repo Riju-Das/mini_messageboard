@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    padding: 40px 16px;
+}
+
+.msgcont {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.anchornewmsg {
+    display: block;
+    background: black;
+    color: white;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.usermsgcont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f2f2f2;
+    padding: 14px 18px;
+    border-radius: 8px;
+}
+
+.usermsgcont>div:first-child {
+    flex: 1;
+    font-size: 14px;
+    color: #222;
+    padding-right: 16px;
+    word-break: break-word;
+}
+
+.usermsgcont button {
+    padding: 6px 14px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
