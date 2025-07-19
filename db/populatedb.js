@@ -21,9 +21,12 @@ INSERT INTO messages(user_id , message) VALUES( 1 , 'YOO WASSUP TIHS IS A MESSAG
 
 async function main(){
     console.log("seeding...")
-    const client = new Client ({
-        connectionString: "postgresql://pdzdatabase_user:qmIRu6Zi1egqEqa1kohdc3HVQb3RUugx@dpg-d1tnokruibrs73fms3a0-a/pdzdatabase"
-    })
+    const client = new Client({
+        connectionString: "postgresql://pdzdatabase_user:qmIRu6Zi1egqEqa1kohdc3HVQb3RUugx@dpg-d1tnokruibrs73fms3a0-a/pdzdatabase",
+        ssl: {
+            rejectUnauthorized: false // Accept self-signed certs from Render
+        }
+    });
     await client.connect()
     await client.query(SQL)
     await client.end()
