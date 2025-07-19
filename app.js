@@ -17,14 +17,3 @@ app.listen(3000, ()=>{
     console.log("The app is listening to port number 3000")
 })
 
-const seed = require("./db/populatedb");
-
-app.get("/seed", async (req, res) => {
-    try {
-        await seed();
-        res.send("Database seeded successfully!");
-    } catch (err) {
-        console.error(err);
-        res.status(500).send("Error seeding database.");
-    }
-});
