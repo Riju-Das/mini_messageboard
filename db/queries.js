@@ -1,7 +1,7 @@
 const pool = require("./pool")
 
 async function createNewUser(username,password){
-    await pool.query(`INSERT INTO users(username,password) SELECT $1::VARCHAR, $2::VARCHAR WHERE NOT EXISTS(SELECT 1 FROM users WHERE username =$1::VARCHAR)`, [username,password])
+    await pool.query(`INSERT INTO users(username,password) SELECT $1::VARCHAR, $2::VARCHAR WHERE NOT EXISTS(SELECT 1 FROM users WHERE username = $1::VARCHAR AND password = $2::VARCHAR)`, [username,password])
 }   
 
 async function fetchuserid(username,password){
